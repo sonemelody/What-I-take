@@ -14,6 +14,7 @@ body {
 .nav-item {
   margin-right: 20px;
 }
+
 .breadcrumb-item {
   font-size: 0.8em !important;
 }
@@ -24,6 +25,19 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+#pic_title_top {
+  font-family: 'Glegoo', serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#pic_title {
+  font-family: 'Glegoo', serif;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
 }
 
 .board-table {
