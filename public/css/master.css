@@ -1,10 +1,24 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
+.main-title,
+.navbar-brand{
+  font-family: 'Chonburi', cursive;
+}
+
+#navbarSupportedContent {
+  margin-left: 100px;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
 .breadcrumb-item {
   font-size: 0.8em !important;
 }
-.ellipsis{
+
+.ellipsis {
   display: block;
   width: 100%;
   white-space: nowrap;
@@ -15,20 +29,22 @@ body {
 .board-table {
   table-layout: fixed;
 }
+
 .board-table .numId,
-.board-table .views{
+.board-table .views {
   width: 60px;
   text-align: center;
 }
+
 .board-table .author,
 .board-table .date {
   width: 100px;
   text-align: center;
 }
+
 .board-table .title-container:hover .title-comments,
 .board-table .title-container:hover .title-text,
-.board-table .title-container:hover .title-attachment
-{
+.board-table .title-container:hover .title-attachment {
   text-decoration: underline;
 }
 
@@ -36,6 +52,7 @@ body {
 .comment-text {
   white-space: pre-line;
 }
+
 .post-info{
   font-size: 0.8em;
 }
@@ -47,7 +64,8 @@ body {
 .post-index-tool {
   max-width: 450px;
 }
-.post-index-tool input[type='text']{
+
+.post-index-tool input[type='text'] {
   max-width: 130px;
 }
 
