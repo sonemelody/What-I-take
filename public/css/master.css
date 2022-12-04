@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Glegoo&family=Montserrat:wght@200&display=swap');
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .main-title,
-.navbar-brand{
+.navbar-brand {
   font-family: 'Chonburi', cursive;
 }
 
