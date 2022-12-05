@@ -11,13 +11,21 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb p-1 pl-2 pr-2">
           <li class="breadcrumb-item"><a href="/">Home</a></li>
-          <li class="breadcrumb-item"><a href="/posts">Visitors' Comments</a></li>
-          <li class="breadcrumb-item active" aria-current="page"><%= post.numId %>. <%= post.title %></li>
+          <li class="breadcrumb-item"><a href="/posts">Visitors' Responses</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><%= post.numId %>. <%= post.title %>
+          </li>
         </ol>
       </nav>
 
       <div class="card">
         <h5 class="card-header p-2" data-search-highlight="title"><%= post.numId %>. <%= post.title %></h5>
+        <h7>
+          <div class="border-bottom mb-1 ml-2 mr-2 pt-1 pb-1">
+            <span>Views</span> : <span><%= post.views %> &emsp;</span>
+            <span>| &emsp; Author</span> : <span data-search-highlight="author"><%= post.author ? post.author.username : "" %></span>
+          </div>
+        </h7>
+
         <div class="row">
 
           <div class="col-md-7 col-lg-8 col-xl-9 order-sm-2 order-md-1">
@@ -32,10 +40,6 @@
 
           <div class="col-md-5 col-lg-4 col-xl-3 order-sm-1 order-md-2">
             <div class="post-info card m-2 p-2">
-              <div class="border-bottom pb-1 mb-1">
-                <div><span>Author</span> : <span data-search-highlight="author"><%= post.author ? post.author.username : "" %></span></div>
-                <div><span>Views</span> : <span><%= post.views %></span></div>
-              </div>
               <div><span>Created</span> : <span data-date-time="<%= post.createdAt %>"></span></div>
               <% if(post.updatedAt) { %>
                 <div><span>Updated</span> : <span data-date-time="<%= post.updatedAt %>"></span></div>
