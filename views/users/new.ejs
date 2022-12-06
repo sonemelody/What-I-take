@@ -9,6 +9,9 @@
     <div class="container mb-3">
 
       <h3 class="contentBoxTop mb-3">New User</h3>
+      <p style="text-align:right; color:red;">
+        <small>*Required</small>
+      </p>
 
       <form action="/users" method="post">
 
@@ -57,9 +60,6 @@
             <% } %>
           </div>
         </div>
-        <p>
-          <small>*Required</small>
-        </p>
 
         <% if(errors.unhandled){ %>
           <div class="alert alert-danger">
@@ -70,7 +70,7 @@
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-        
+
       </form>
 
     </div>
