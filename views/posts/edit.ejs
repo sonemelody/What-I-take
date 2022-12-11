@@ -2,6 +2,12 @@
 <html>
   <head>
     <%- include('../partials/head') %>
+    <style>
+      body {
+        padding-top: 100px;
+        background-color: #163c23;
+      }
+    </style>
   </head>
   <body>
     <%- include('../partials/nav') %>
@@ -10,9 +16,9 @@
 
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb p-1 pl-2 pr-2">
-          <li class="breadcrumb-item"><a href="/">Home</a></li>
-          <li class="breadcrumb-item"><a href="/posts">Board</a></li>
-          <li class="breadcrumb-item"><a href="/posts/<%= post._id %>"><%= post.title %></a></li>
+          <li class="breadcrumb-item"><a href="/" style="color:#c2cd7f;">Home</a></li>
+          <li class="breadcrumb-item"><a href="/posts" style="color:#c2cd7f;">Board</a></li>
+          <li class="breadcrumb-item"><a href="/posts/<%= post._id %>" style="color:#c2cd7f;"><%= post.title %></a></li>
           <li class="breadcrumb-item active" aria-current="page">Edit Post</li>
         </ol>
       </nav>
@@ -20,7 +26,7 @@
       <form action="/posts/<%= post._id %>?_method=put<%= getPostQueryString(true) %>" enctype="multipart/form-data" method="post">
 
         <div class="form-group">
-          <label for="title">Title</label>
+          <label for="title" style="color:white;">Title</label>
           <input type="text" id="title" name="title" value="<%= post.title %>" class="form-control <%= (errors.title)?'is-invalid':'' %>">
           <% if(errors.title){ %>
             <span class="invalid-feedback"><%= errors.title.message %></span>
@@ -28,15 +34,15 @@
         </div>
 
         <div class="form-group">
-          <label for="title">Attachment</label>
+          <label for="title" style="color:white;">Attachment</label>
 
           <input type="hidden" id="attachment" name="attachment" value="<%= post.attachment?post.attachment._id:'' %>">
 
           <% if(post.attachment){ %>
             <div class="input-group mb-3" id="currentAttachemnt">
-              <input type="text" class="form-control" value="<%= post.attachment.originalFileName %>" readonly />
+              <input type="text" class="form-control" style="color:#c2cd7f;" value="<%= post.attachment.originalFileName %>" readonly />
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" onclick="$('#attachment').val('');$('#currentAttachemnt').hide();$('#newAttachment').removeClass('d-none');">Delete</button>
+                <button class="btn btn-outline-light" type="button" onclick="$('#attachment').val('');$('#currentAttachemnt').hide();$('#newAttachment').removeClass('d-none');">Delete</button>
               </div>
             </div>
           <% } %>
@@ -44,7 +50,7 @@
         </div>
 
         <div class="form-group">
-          <label for="body">Body</label>
+          <label for="body" style="color:white;">Body</label>
           <textarea id="body" name="body" rows="5" class="form-control <%= (errors.body)?'is-invalid':'' %>"><%= post.body %></textarea>
           <% if(errors.body){ %>
             <span class="invalid-feedback"><%= errors.body.message %></span>
@@ -58,8 +64,8 @@
         <% } %>
 
         <div>
-          <a class="btn btn-primary" href="/posts/<%= post._id %><%= getPostQueryString() %>">Back</a>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <a class="btn btn-outline-warning" href="/posts/<%= post._id %><%= getPostQueryString() %>">Back</a>
+          <button type="submit" class="btn btn-outline-warning">Submit</button>
         </div>
 
       </form>

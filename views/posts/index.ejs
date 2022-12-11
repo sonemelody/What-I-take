@@ -2,13 +2,17 @@
 <html>
   <head>
     <%- include('../partials/head') %>
+    <style>
+      body {
+        padding-top: 100px;
+        background-color: #163c23;
+      }
+    </style>
   </head>
   <body>
     <%- include('../partials/nav') %>
 
     <div class="container mb-3">
-
-      <h2 class="mb-3">Visitors' Responses</h2>
 
       <table class="board-table table table-sm border-bottom">
 
@@ -30,31 +34,31 @@
           <% } %>
           <% posts.forEach(function(post) { %>
             <tr>
-              <td class="numId"><%= post.numId %></td>
+              <td class="numId" style="color:white;"><%= post.numId %></td>
               <td>
                 <a href="/posts/<%= post._id %><%= getPostQueryString() %>" class="title-container">
                   <div data-search-highlight="title" class="float-left">
                     <% if(post.views > 50){ %>
                       <span class="badge badge-warning">(hot!)</span>
                     <% } %>
-                    <span class="title-text"><%= post.title %></span>
+                    <span class="title-text" style="color:#c2cd7f;"><%= post.title %></span>
                   </div>
                   <% if(post.commentCount){ %>
-                    <small class="title-comments d-inline-block pl-2">(<%= post.commentCount %>)</small>
+                    <small class="title-comments d-inline-block pl-2" style="color:#c2cd7f;">(<%= post.commentCount %>)</small>
                   <% } %>
                   <% if(post.attachment){ %>
                     <small class="title-attachment d-inline-block pl-2">📁</small>
                   <% } %>
                 </a>
               </td>
-              <td class="views"><%= post.views %></td>
+              <td class="views" style="color:white;"><%= post.views %></td>
               <td class="author">
                 <a href="/posts<%= getPostQueryString(false, { searchType:'author!', searchText:post.author.username }) %>">
-                  <div data-search-highlight="author" class="ellipsis"><%= post.author ? post.author.username : "" %></div>
+                  <div data-search-highlight="author" class="ellipsis" style="color:#c2cd7f;"><%= post.author ? post.author.username : "" %></div>
                 </a>
               </td>
               <td class="date">
-                <span data-date="<%= post.createdAt %>"></span>
+                <span data-date="<%= post.createdAt %>" style="color:white;"></span>
               </td>
             </tr>
           <% }) %>
@@ -66,7 +70,7 @@
 
         <div class="col-2">
           <% if(isAuthenticated){ %>
-            <a class="btn btn-primary" href="/posts/new<%= getPostQueryString() %>">New</a>
+            <a class="btn btn-outline-warning" href="/posts/new<%= getPostQueryString() %>">New</a>
           <% } %>
         </div>
 
@@ -82,7 +86,7 @@
             </li>
             <% for(i=1;i<=maxPage;i++){ %>
               <% if(i==1 || i==maxPage || (i>=currentPage-offset && i<=currentPage+offset)){ %>
-                <li class="page-item <%= currentPage==i?'active':'' %>"><a class="page-link" href="/posts<%= getPostQueryString(false, {page:i}) %>"> <%= i %> </a></li>
+                <li class="page-item <%= currentPage==i?'':'' %>"><a class="page-link" href="/posts<%= getPostQueryString(false, {page:i}) %>" style="color:#163c23;"> <%= i %> </a></li>
               <% } else if(i==2 || i==maxPage-1){ %>
                 <li><a class="page-link">...</a></li>
               <% } %>
@@ -99,7 +103,7 @@
         <div class="form-row">
 
           <div class="form-group col-4">
-            <label>Show</label>
+            <label style="color:white;">Show</label>
             <select name="limit" class="custom-select" onchange="this.parentElement.parentElement.parentElement.submit()">
               <option value="5" <%= limit==5?'selected':'' %>>5 posts</option>
               <option value="10" <%= limit==10?'selected':'' %>>10 posts</option>
@@ -108,7 +112,7 @@
           </div>
 
           <div class="form-group col-10">
-            <label>Search</label>
+            <label style="color:white;">Search</label>
             <div class="input-group">
               <select name="searchType" class="custom-select">
                 <option value="title,body" <%= searchType=='title,body'?'selected':'' %>>Title, Body</option>
@@ -118,7 +122,7 @@
               </select>
               <input minLength="3" type="text" name="searchText" value="<%= searchText %>">
               <div class="input-group-append">
-                <button class="btn btn-outline-primary" type="submit">Search</button>
+                <button class="btn btn-outline-light" type="submit">Search</button>
               </div>
             </div>
           </div>

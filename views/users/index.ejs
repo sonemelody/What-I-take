@@ -2,6 +2,12 @@
 <html>
   <head>
     <%- include('../partials/head') %>
+    <style>
+      body {
+        padding-top: 100px;
+        background-color: #163c23;
+      }
+    </style>
   </head>
   <body>
     <%- include('../partials/nav') %>
@@ -12,11 +18,11 @@
 
       <ul class="list-group">
         <% if(users == null || users.length == 0){ %>
-          <li class="list-group-item"> There is no user yet.</li>
+          <li class="list-group-item" style="color:white;"> There is no user yet.</li>
         <% } %>
         <% users.forEach(function(user) { %>
           <li class="list-group-item">
-            <a href="/users/<%= user.username %>"><%= user.username %></a>
+            <a href="/users/<%= user.username %>" style="color:white;"><%= user.username %></a>
           </li>
         <% }) %>
       </ul>

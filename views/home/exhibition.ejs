@@ -2,133 +2,164 @@
 <html>
   <head>
     <%- include('../partials/head') %>
+    <style>
+      body {
+        padding-top: 100px;
+        background-color: #163c23;
+      }
+      * {
+        margin:0px;
+        padding:0px;
+        box-sizing:border-box;
+      }
+      .image-slider {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:650px;
+        height:420px;
+        overflow:hidden;
+        border-radius:5px;
+        box-shadow:0px 50px 100px rgba(0,0,0,0.4);
+      }
+      .image-slider .images {
+        position:absolute;
+        top:0px;
+        left:0px;
+        width:100%;
+        height:100%;
+      }
+      .image-slider .images img {
+        position:absolute;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        opacity:0;
+        transform:scale(1.1);
+        transition:all 500ms ease-in-out;
+      }
+      .image-slider .images img.active {
+        opacity:1;
+        transform:scale(1);
+      }
+      .image-slider .back-btn,
+      .image-slider .next-btn {
+        position:absolute;
+        top:0px;
+        width:40px;
+        height:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        cursor:pointer;
+        color:#fff;
+        font-size:25px;
+        background:rgba(0,0,0,0.2);
+        transition:all 300ms ease-in-out;
+      }
+      .image-slider .next-btn {
+        right:0px;
+      }
+      .image-slider .back-btn:hover,
+      .image-slider .next-btn:hover {
+        background:rgba(0,0,0,0.5);
+      }
+      .image-slider .thumbnails {
+        position:absolute;
+        bottom:5px;
+        width:100%;
+        height:40px;
+        display:flex;
+        justify-content:center;
+        gap:5px;
+      }
+      .image-slider .thumbnails img {
+        width:60px;
+        cursor:pointer;
+        border:2px solid transparent;
+      }
+      .image-slider .thumbnails img.active {
+        border:2px solid #fff;
+      }
+    </style>
   </head>
   <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <%- include('../partials/nav') %>
-
-    <div class="container mb-3">
-
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h3 id="pic_title_top">U.K</h3>
-          <div id="carouselExampleIndicators0" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators0" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators0" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators0" data-slide-to="2"></li>
-              <li data-target="#carouselExampleIndicators0" data-slide-to="3"></li>
-              <li data-target="#carouselExampleIndicators0" data-slide-to="4"></li>
-              <li data-target="#carouselExampleIndicators0" data-slide-to="5"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbcXfuY%2FbtrSIqNe0Ms%2F4el14FXEueLFITJr7C8BJk%2Fimg.jpg" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc2scM6%2FbtrSIqGtTrw%2FrBr13LH3kBny1BF5bXb5s0%2Fimg.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZMpdI%2FbtrSIqsZWc8%2Fa7xGgpc6wxrvWORdAXs3b0%2Fimg.jpg" alt="Third slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FLgri0%2FbtrSMH0Qnga%2FN1EvWmgMZBgzIjk4XqmBN0%2Fimg.jpg" alt="Fourth slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb1tbBv%2FbtrSLZN50jn%2FCLR0geFN8FK7xfZGQRxVB0%2Fimg.jpg" alt="Fifth slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbg0KOu%2FbtrSN0Tnzgw%2Fv3Mp0kUc6HKrtTO04yuLlk%2Fimg.jpg" alt="Sixth slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators0" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators0" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="container">
-          <h3 id="pic_title">FRANCE</h3>
-          <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
-              <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
-              <li data-target="#carouselExampleIndicators1" data-slide-to="4"></li>
-              <li data-target="#carouselExampleIndicators1" data-slide-to="5"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdmUVqT%2FbtrSMHNjodO%2F4yfHvxnkqIVxhtw4JLzk2k%2Fimg.jpg" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FNC4vH%2FbtrSIQkEFOX%2F6ak0slCW7TJy27CALuy5eK%2Fimg.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FPmluF%2FbtrSIsxqZNK%2F9vAzqcLq0jjHYWv7f4d1bk%2Fimg.jpg" alt="Third slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F7U8UY%2FbtrSJXJ1eYb%2FJyKW9syo2ylCIBYUnXgSA0%2Fimg.jpg" alt="Fourth slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F3AmUB%2FbtrSLJYUNU3%2FVmEcBSInzcIWDBmIkr9aI0%2Fimg.jpg" alt="Fifth slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEBt2M%2FbtrSKuua6MQ%2FGXAPiUfp3ydX7PG9SpqF9K%2Fimg.jpg" alt="Sixth slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="container">
-          <h3 id="pic_title">SWITZERLAND</h3>
-          <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
-              <li data-target="#carouselExampleIndicators2" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbjFj53%2FbtrSMIthDiZ%2FvyRcqlE3A5Q4y42LwsOkL0%2Fimg.jpg" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdjafM3%2FbtrSM3cYfJ9%2Fm1ru79626PBV1BM7cGCtL1%2Fimg.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FohEI3%2FbtrSM3xg4Im%2FIKpcsVuKShkmuZqc1tXY11%2Fimg.jpg" alt="Third slide">
-              </div>
-              <div class="carousel-item">
-                <img class="mx-auto d-block w-50" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FwS9st%2FbtrSN2dXmab%2FOCLjKhGOeujCIsSyywKf51%2Fimg.jpg" alt="Fourth slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-
+    <div class="image-slider">
+      <div class="images"></div>
+      <div class="thumbnails"></div>
+      <div class="back-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
       </div>
-
+      <div class="next-btn">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
     </div>
   </body>
+  <script>
+    let images = [
+    "https://blog.kakaocdn.net/dn/bjFj53/btrSMIthDiZ/vyRcqlE3A5Q4y42LwsOkL0/img.jpg",
+    "https://blog.kakaocdn.net/dn/ohEI3/btrSM3xg4Im/IKpcsVuKShkmuZqc1tXY11/img.jpg",
+    "https://blog.kakaocdn.net/dn/djafM3/btrSM3cYfJ9/m1ru79626PBV1BM7cGCtL1/img.jpg",
+    "https://blog.kakaocdn.net/dn/wS9st/btrSN2dXmab/OCLjKhGOeujCIsSyywKf51/img.jpg",
+    "https://blog.kakaocdn.net/dn/b1tbBv/btrSLZN50jn/CLR0geFN8FK7xfZGQRxVB0/img.jpg",
+    "https://blog.kakaocdn.net/dn/bg0KOu/btrSN0Tnzgw/v3Mp0kUc6HKrtTO04yuLlk/img.jpg",
+    "https://blog.kakaocdn.net/dn/NC4vH/btrSIQkEFOX/6ak0slCW7TJy27CALuy5eK/img.jpg",
+    "https://blog.kakaocdn.net/dn/dmUVqT/btrSMHNjodO/4yfHvxnkqIVxhtw4JLzk2k/img.jpg"
+    ];
+
+    function imageSlider(parent,images){
+    let currentImage = 0;
+    let slider = {
+      parent:parent,
+      images:parent.querySelector(".images"),
+      thumbnails:parent.querySelector(".thumbnails"),
+      backBtn:parent.querySelector(".back-btn"),
+      nextBtn:parent.querySelector(".next-btn")
+    };
+
+    slider.images.innerHTML = images.map(function(image){
+      return `<img src="${image}"/>`
+    }).join("");
+
+    let imageNodes = slider.images.querySelectorAll("img");
+    imageNodes[currentImage].classList.add("active");
+
+    slider.thumbnails.innerHTML = slider.images.innerHTML;
+
+    let thumbnailNodes = slider.thumbnails.querySelectorAll("img");
+    thumbnailNodes[currentImage].classList.add("active");
+    for(let i=0;i<thumbnailNodes.length;i++){
+      thumbnailNodes[i].addEventListener("click",function(){
+        slider.thumbnails.querySelector("img.active").classList.remove("active");
+        thumbnailNodes[i].classList.add("active");
+        imageNodes[currentImage].classList.remove("active");
+        currentImage = i;
+        imageNodes[currentImage].classList.add("active");
+      });
+    }
+
+    slider.backBtn.addEventListener("click",function(){
+      imageNodes[currentImage].classList.remove("active");
+      currentImage--;
+      if(currentImage < 0){
+        currentImage = images.length - 1;
+      }
+      imageNodes[currentImage].classList.add("active");
+      slider.thumbnails.querySelector("img.active").classList.remove("active");
+      thumbnailNodes[currentImage].classList.add("active");
+    });
+
+    slider.nextBtn.addEventListener("click",function(){
+      imageNodes[currentImage].classList.remove("active");
+      currentImage = (currentImage+1) % images.length;
+      imageNodes[currentImage].classList.add("active");
+      slider.thumbnails.querySelector("img.active").classList.remove("active");
+      thumbnailNodes[currentImage].classList.add("active");
+    });
+    }
+
+    imageSlider(document.querySelector(".image-slider"),images);
+  </script>
 </html>
