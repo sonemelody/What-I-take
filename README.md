@@ -4,29 +4,29 @@
 
 ### 1. Description
 내가 직접 찍은 사진을 전시하는 갤러리
-게시판을 통해 사이트 방문객의 피드백 가능
-
-
+게시판을 통해 사이트 방문객의 피드백 가능  
+<br/>  
+  
 ### 2. Use Case Diagram
 ![image01](https://github.com/sonemelody/What-I-take/assets/49124725/3c5d5a70-238c-4835-9960-b89f9eecb21b)
+<br/>  
 
-
+  
 ### 3. Develop Language
 - Frond-end: Express.js
 - Back-end: Node.js + MongoDB
 - UI: Bootstrap
-
+<br/>  
 
 ### 4. Web Contents  
-
 **1. Home**
 
 - 상단 가장 좌측에 프로젝트 이름 표시
 - Home, Exhibiton, Board 메뉴 표시
 - Sign Up, Login 메뉴 표시
 
-![image02](https://github.com/sonemelody/What-I-take/assets/49124725/cb0f3161-b728-464d-98a5-a07be625a314)
-
+![image02](https://github.com/sonemelody/What-I-take/assets/49124725/cb0f3161-b728-464d-98a5-a07be625a314)<br/>   
+<br/>  
 
 **2. Sign Up**
 
@@ -36,8 +36,8 @@
 - Password와 Password Confirm이 같아야만 회원가입 가능
 - Submit 버튼으로 회원가입
 
-![image04](https://github.com/sonemelody/What-I-take/assets/49124725/ded37f88-c7df-4861-89ef-6169d57afb9d)
-
+![image04](https://github.com/sonemelody/What-I-take/assets/49124725/ded37f88-c7df-4861-89ef-6169d57afb9d)<br/>  
+<br/>  
 
 **3. Login**
 
@@ -47,15 +47,13 @@
 - Submit 버튼으로 로그인
 - 로그인 성공 시에만 상단 헤더에 My Account와 Logout 표시
 
-![image05](https://github.com/sonemelody/What-I-take/assets/49124725/0f0ef332-a97e-48e8-8a89-b27381e0fedf)
-
-
+![image05](https://github.com/sonemelody/What-I-take/assets/49124725/0f0ef332-a97e-48e8-8a89-b27381e0fedf)<br/>  
+<br/>  
 
 **4. Logout**
 
 - 현재 로그인된 계정에서 로그아웃
-
-
+<br/>  
 
 **5. My Account**
 
@@ -63,8 +61,8 @@
 - 회원가입 시 입력했던 Name과 Email 표시
 - Edit 버튼으로 사용자 정보 수정 가능
 
-![image06](https://github.com/sonemelody/What-I-take/assets/49124725/ebf19fec-7289-4920-a13b-4151eb723913)
-
+![image06](https://github.com/sonemelody/What-I-take/assets/49124725/ebf19fec-7289-4920-a13b-4151eb723913)<br/>  
+<br/>  
 
 
 **6. Edit User**  
@@ -76,8 +74,8 @@
 - Submit 버튼으로 수정 사항 저장
 
 
-![image07](https://github.com/sonemelody/What-I-take/assets/49124725/79f8efa9-6ad4-4233-a306-afce03d1c322)
-
+![image07](https://github.com/sonemelody/What-I-take/assets/49124725/79f8efa9-6ad4-4233-a306-afce03d1c322)<br/>  
+<br/>  
 
 
 **7. Exhibition**  
@@ -87,8 +85,8 @@
 - 하단 썸네일 클릭하여 원하는 사진으로 이동 가능
 - 마우스 우클릭 및 사진 저장 금지
 
-![image03](https://github.com/sonemelody/What-I-take/assets/49124725/1f0daf15-fd42-44cb-9404-daf83ce7e1d0)
-
+![image03](https://github.com/sonemelody/What-I-take/assets/49124725/1f0daf15-fd42-44cb-9404-daf83ce7e1d0)<br/>  
+<br/>  
 
 
 **8. Board**  
@@ -106,8 +104,8 @@
 - 각 게시물의 author 누르면 해당 아이디가 작성한 게시물만 표시
 
 
-![image08](https://github.com/sonemelody/What-I-take/assets/49124725/bb7f7b1c-f133-45b5-ba0b-1556b7da39ca)
-
+![image08](https://github.com/sonemelody/What-I-take/assets/49124725/bb7f7b1c-f133-45b5-ba0b-1556b7da39ca)<br/>  
+<br/>  
 
 **9. New Post**  
 
@@ -119,8 +117,8 @@
 - Submit 버튼으로 게시물 등록
 
 
-![image09](https://github.com/sonemelody/What-I-take/assets/49124725/6ffa7773-3f83-45ec-8644-7fa76fc83149)
-
+![image09](https://github.com/sonemelody/What-I-take/assets/49124725/6ffa7773-3f83-45ec-8644-7fa76fc83149)<br/>  
+<br/>  
 
 **10. Post View**  
 
@@ -136,8 +134,8 @@
 - Delete 버튼으로 게시물 삭제
 
 
-![image10](https://github.com/sonemelody/What-I-take/assets/49124725/66968df8-8653-4dfb-9dc8-6dc3ef320906)
-
+![image10](https://github.com/sonemelody/What-I-take/assets/49124725/66968df8-8653-4dfb-9dc8-6dc3ef320906)<br/>  
+<br/>  
 
 **11. Comments**  
 
@@ -153,18 +151,17 @@
 - 댓글이 지워진 경우 (Deleted Comment)라는 흔적 생성 -> 답글의 원본 댓글이 삭제되었을 경우, 답글이 허공에 남는 경우 방지 위함
 
 
-![image10](https://github.com/sonemelody/What-I-take/assets/49124725/66968df8-8653-4dfb-9dc8-6dc3ef320906)
-
+![image10](https://github.com/sonemelody/What-I-take/assets/49124725/66968df8-8653-4dfb-9dc8-6dc3ef320906)<br/>  
+<br/>  
 
 
 
 ### 3. Database Structure
-홈페이지의 게시물 및 댓글, 첨부파일 그리고 사용자 정보를 관리하기 위해 사용한 mongoDB의 구조
-comments, counters, files, posts, users로 이루어져 있으며 이는 각각 댓글 내용, 게시물 번호, 첨부 파일, 게시물 내용, 회원가입한 사용자 정보를 관리
+홈페이지의 게시물 및 댓글, 첨부파일 그리고 사용자 정보를 관리하기 위해 사용한 mongoDB의 구조  
+comments, counters, files, posts, users로 이루어져 있으며 각각 댓글 내용, 게시물 번호, 첨부 파일, 게시물 내용, 회원가입한 사용자 정보를 관리
 
-![image12](https://github.com/sonemelody/What-I-take/assets/49124725/178061c5-2168-4398-a21d-b7bac50395c3)
-
-
+![image14](https://github.com/sonemelody/What-I-take/assets/49124725/396072bd-d909-4a61-a889-c950cc085556)<br/>  
+<br/>  
 
 
 ### 4. How to Excute
