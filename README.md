@@ -32,7 +32,7 @@
 
 - Username, Name, Email, Password, Password Confirm의 다섯 가지 항목
 - Username은 로그인 시 사용되는 아이디
-- * 표시된 항목은 필수 입력
+- 별표 표시된 항목은 필수 입력
 - Password와 Password Confirm이 같아야만 회원가입 가능
 - Submit 버튼으로 회원가입
 
