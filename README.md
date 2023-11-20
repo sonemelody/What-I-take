@@ -156,7 +156,7 @@
 
 
 
-### 3. Database Structure
+### 5. Database Structure
 홈페이지의 게시물 및 댓글, 첨부파일 그리고 사용자 정보를 관리하기 위해 사용한 mongoDB의 구조  
 comments, counters, files, posts, users로 이루어져 있으며 각각 댓글 내용, 게시물 번호, 첨부 파일, 게시물 내용, 회원가입한 사용자 정보를 관리
 
@@ -164,7 +164,7 @@ comments, counters, files, posts, users로 이루어져 있으며 각각 댓글 
 <br/>  
 
 
-### 4. How to Excute
+### 6. How to Execute
 
 $ npm init --yes  
 $ npm install nodemon  
