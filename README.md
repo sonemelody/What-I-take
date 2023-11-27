@@ -13,7 +13,7 @@
 
   
 ### 3. Develop Language
-- Frond-end: Express.js
+- Frond-end: ejs
 - Back-end: Node.js + MongoDB
 - UI: Bootstrap
 <br/>  
